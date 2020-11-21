@@ -15,6 +15,6 @@
     "rules": {
         "import/prefer-default-export": 0,
         "@typescript-eslint/lines-between-class-members": 0,
-        "import/no-cycle": 1
+        "import/no-cycle": 0
     }
 }
