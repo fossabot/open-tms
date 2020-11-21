@@ -1,0 +1,6 @@
+{
+  "bumpVersion": "patch",
+  "lockFileMaintenance": {
+    "enabled": true
+  }
+}
