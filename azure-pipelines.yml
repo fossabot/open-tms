@@ -27,7 +27,7 @@ steps:
 
 - script: >
     dotnet csmacnz.Coveralls --opencover
-    -i src/XUnit.Coverlet.Collector/TestResults/*/coverage.opencover.xml
+    -i $(src/XUnit.Coverlet.Collector/TestResults/**/coverage.opencover.xml)
     --repoToken $COVERALLS_REPO_TOKEN
     --commitId $BUILD_SOURCE_VERSION
     --commitBranch $BUILD_SOURCE_BRANCH_NAME
