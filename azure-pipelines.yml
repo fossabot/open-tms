@@ -27,17 +27,17 @@ steps:
   env:
     AGENT_BUILD_DIRECTORY: $(Agent.BuildDirectory)
 
-- script: >
-    dotnet csmacnz.Coveralls --opencover
-    -i $AGENT_BUILD_DIRECTORY/TestResults/coverage.opencover.xml
-    --repoToken $COVERALLS_REPO_TOKEN
-  displayName: Report test coverage
-  env:
-    AGENT_BUILD_DIRECTORY: $(Agent.BuildDirectory)
-    BUILD_BUILD_ID: $(Build.BuildId)
-    BUILD_REQUESTED_FOR: $(Build.RequestedFor)
-    BUILD_REQUESTED_FOR_EMAIL: $(Build.RequestedForEmail)
-    BUILD_SOURCE_BRANCH_NAME: $(Build.SourceBranchName)
-    BUILD_SOURCE_VERSION: $(Build.SourceVersion)
-    BUILD_SOURCE_VERSION_MESSAGE: $(Build.SourceVersionMessage)
-    COVERALLS_REPO_TOKEN: $(Coveralls.RepoToken)
+#- script: >
+#    dotnet csmacnz.Coveralls --opencover
+#    -i $AGENT_BUILD_DIRECTORY/TestResults/coverage.opencover.xml
+#    --repoToken $COVERALLS_REPO_TOKEN
+#  displayName: Report test coverage
+#  env:
+#    AGENT_BUILD_DIRECTORY: $(Agent.BuildDirectory)
+#    BUILD_BUILD_ID: $(Build.BuildId)
+#    BUILD_REQUESTED_FOR: $(Build.RequestedFor)
+#    BUILD_REQUESTED_FOR_EMAIL: $(Build.RequestedForEmail)
+#    BUILD_SOURCE_BRANCH_NAME: $(Build.SourceBranchName)
+#    BUILD_SOURCE_VERSION: $(Build.SourceVersion)
+#    BUILD_SOURCE_VERSION_MESSAGE: $(Build.SourceVersionMessage)
+#    COVERALLS_REPO_TOKEN: $(Coveralls.RepoToken)
