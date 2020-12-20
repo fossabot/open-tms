@@ -3,39 +3,44 @@
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-# Why Windows? Because it works, that's why. Nah, it's because Visual Studio
 pool:
-  vmImage: 'windows-latest'
-
-variables:
-  solution: 'src/OpenTMS.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+  vmImage: 'ubuntu-latest'
 
 steps:
-- task: NuGetToolInstaller@0
 
-- script: dotnet tool update -g coveralls.net --version 2.0.0
-  displayName: Install coveralls.net
+- displayName: Restore tools
+  script: dotnet tool restore
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+- displayName: Restore solution
+  script: dotnet restore
 
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+- displayName: Build solution
+  script: dotnet build
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+- displayName: Test solution
+  env:
+    AGENT_BUILD_DIRECTORY: $(Agent.BuildDirectory)
+  bash: >
+    cd src/XUnit.Coverlet.Collector && \
+    dotnet test --collect:"XPlat code coverage" --settings coverlet.runsettings && \
+    cd $AGENT_BUILD_DIRECTORY
 
-- task: VSTest@2
-  inputs:
-    runTestsInIsolation: true
-    codeCoverageEnabled: true
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+- displayName: Report test coverage
+  env:
+    BUILD_BUILD_ID: $(Build.BuildId)
+    BUILD_REQUESTED_FOR: $(Build.RequestedFor)
+    BUILD_REQUESTED_FOR_EMAIL: $(Build.RequestedForEmail)
+    BUILD_SOURCE_BRANCH_NAME: $(Build.SourceBranchName)
+    BUILD_SOURCE_VERSION: $(Build.SourceVersion)
+    BUILD_SOURCE_VERSION_MESSAGE: $(Build.SourceVersionMessage)
+    COVERALLS_REPO_TOKEN: $(Coveralls.RepoToken)
+  bash: >
+    dotnet csmacnz.Coveralls --opencover \
+    -i src/XUnit.Coverlet.Collector/TestResults/*/coverage.opencover.xml \
+    --repoToken $COVERALLS_REPO_TOKEN \
+    --commitId $BUILD_SOURCE_VERSION \
+    --commitBranch $BUILD_SOURCE_BRANCH_NAME \
+    --commitAuthor $BUILD_REQUESTED_FOR \
+    --commitEmail $BUILD_REQUESTED_FOR_EMAIL \
+    --commitMessage $BUILD_SOURCE_VERSION_MESSAGE \
+    --jobId $BUILD_BUILD_ID
