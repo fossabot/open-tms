@@ -1,5 +1,6 @@
 # OpenTMS
 
+[![Build Status](https://dev.azure.com/open-tms/Open%20TMS/_apis/build/status/Open-TMS.open-tms?branchName=master)](https://dev.azure.com/open-tms/Open%20TMS/_build/latest?definitionId=1&branchName=master)
 [![Coverage Status](https://coveralls.io/repos/github/Open-TMS/open-tms/badge.svg?branch=master)](https://coveralls.io/github/Open-TMS/open-tms?branch=master)
 
 OpenTMS is an open source Transportation Management System (TMS) aimed at small
