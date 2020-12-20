@@ -1,5 +1,7 @@
 # OpenTMS
 
+[![Coverage Status](https://coveralls.io/repos/github/Open-TMS/open-tms/badge.svg?branch=master)](https://coveralls.io/github/Open-TMS/open-tms?branch=master)
+
 OpenTMS is an open source Transportation Management System (TMS) aimed at small
 to medium sized transportation companies. The application is/will be written
 using NodeJS on the backend for the server, React for the client, and will have
