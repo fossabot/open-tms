@@ -29,10 +29,11 @@ steps:
 
 - script: >
     dotnet csmacnz.Coveralls --opencover
-    -i ./TestResults/coverage.opencover.xml
+    -i $AGENT_BUILD_DIRECTORY/TestResults/coverage.opencover.xml
     --repoToken $COVERALLS_REPO_TOKEN
   displayName: Report test coverage
   env:
+    AGENT_BUILD_DIRECTORY: $(Agent.BuildDirectory)
     BUILD_BUILD_ID: $(Build.BuildId)
     BUILD_REQUESTED_FOR: $(Build.RequestedFor)
     BUILD_REQUESTED_FOR_EMAIL: $(Build.RequestedForEmail)
