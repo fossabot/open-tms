@@ -21,7 +21,6 @@ steps:
     cd src/XUnit.Coverlet.Collector &&
     dotnet test --collect:"XPlat code coverage" --settings coverlet.runsettings &&
     cd TestResults/* &&
-    mkdir $AGENT_BUILD_DIRECTORY/TestResults &&
     mv coverage.opencover.xml $AGENT_BUILD_DIRECTORY/TestResults/coverage.opencover.yml &&
     cd $AGENT_BUILD_DIRECTORY
   displayName: Test solution
