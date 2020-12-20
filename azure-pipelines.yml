@@ -31,12 +31,6 @@ steps:
     dotnet csmacnz.Coveralls --opencover
     -i TestResults/coverage.opencover.yml
     --repoToken $COVERALLS_REPO_TOKEN
-    --commitId $BUILD_SOURCE_VERSION
-    --commitBranch $BUILD_SOURCE_BRANCH_NAME
-    --commitAuthor $BUILD_REQUESTED_FOR
-    --commitEmail $BUILD_REQUESTED_FOR_EMAIL
-    --commitMessage $BUILD_SOURCE_VERSION_MESSAGE
-    --jobId $BUILD_BUILD_ID
   displayName: Report test coverage
   env:
     BUILD_BUILD_ID: $(Build.BuildId)
