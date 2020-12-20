@@ -21,7 +21,7 @@ steps:
     cd src/XUnit.Coverlet.Collector &&
     dotnet test --collect:"XPlat code coverage" --settings coverlet.runsettings &&
     cd TestResults/* &&
-    mv coverage.opencover.xml $AGENT_BUILD_DIRECTORY/TestResults/coverage.opencover.yml &&
+    mv coverage.opencover.xml $AGENT_BUILD_DIRECTORY/TestResults/coverage.opencover.xml &&
     cd $AGENT_BUILD_DIRECTORY
   displayName: Test solution
   env:
@@ -29,7 +29,7 @@ steps:
 
 - script: >
     dotnet csmacnz.Coveralls --opencover
-    -i TestResults/coverage.opencover.yml
+    -i ./TestResults/coverage.opencover.xml
     --repoToken $COVERALLS_REPO_TOKEN
   displayName: Report test coverage
   env:
