@@ -2,6 +2,7 @@
 
 [![Build Status](https://dev.azure.com/open-tms/Open%20TMS/_apis/build/status/Open-TMS.open-tms?branchName=master)](https://dev.azure.com/open-tms/Open%20TMS/_build/latest?definitionId=1&branchName=master)
 [![Coverage Status](https://coveralls.io/repos/github/Open-TMS/open-tms/badge.svg?branch=master)](https://coveralls.io/github/Open-TMS/open-tms?branch=master)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOpen-TMS%2Fopen-tms.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FOpen-TMS%2Fopen-tms?ref=badge_shield)
 
 OpenTMS is an open source Transportation Management System (TMS) aimed at small
 to medium sized transportation companies. The application is/will be written
@@ -32,3 +33,7 @@ think it's fair to those who may be genuinely interested in the future of this
 project to put up code that's constantly changing. That said, progress is being
 made on this project...slowly. I work in the transportation industry myself, so
 I have my work schedule to contend with.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOpen-TMS%2Fopen-tms.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FOpen-TMS%2Fopen-tms?ref=badge_large)
