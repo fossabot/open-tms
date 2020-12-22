@@ -27,6 +27,9 @@ steps:
   env:
     AGENT_BUILD_DIRECTORY: $(Agent.BuildDirectory)
 
+- script: tree
+  displayName: Show build tree
+
 #- script: >
 #    dotnet csmacnz.Coveralls --opencover
 #    -i $AGENT_BUILD_DIRECTORY/TestResults/coverage.opencover.xml
