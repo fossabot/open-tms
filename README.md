@@ -32,3 +32,7 @@ think it's fair to those who may be genuinely interested in the future of this
 project to put up code that's constantly changing. That said, progress is being
 made on this project...slowly. I work in the transportation industry myself, so
 I have my work schedule to contend with.
+
+## Open Source License Compliance
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FOpen-TMS%2Fopen-tms.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FOpen-TMS%2Fopen-tms?ref=badge_large)
