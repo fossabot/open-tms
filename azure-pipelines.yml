@@ -27,7 +27,9 @@ steps:
   env:
     AGENT_BUILD_DIRECTORY: $(Agent.BuildDirectory)
 
-- script: tree
+- script: >
+    sudo apt install -qq -y tree
+    tree
   displayName: Show build tree
 
 #- script: >
