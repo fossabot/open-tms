@@ -28,7 +28,7 @@ steps:
     AGENT_BUILD_DIRECTORY: $(Agent.BuildDirectory)
 
 - script: >
-    sudo apt install -qq -y tree
+    sudo apt install -qq -y tree &&
     tree
   displayName: Show build tree
 
